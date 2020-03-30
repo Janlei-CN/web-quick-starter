@@ -1,17 +1,27 @@
 package com.janlei.model.entity;
 
 import lombok.Data;
-import lombok.extern.slf4j.Slf4j;
+import tk.mybatis.mapper.annotation.KeySql;
 
-@Slf4j //提供日志记录
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+//@Slf4j //提供日志记录
 @Data //类在编译阶段，会生成对应的方法get/set/hashcode/equals/toString
+@Table(name = "user")
 public class User {
 
-    private String id;
+    @Id
+    @KeySql(useGeneratedKeys = true)    //主键回填
+    private Integer id;
 
+    @Column     //指定 name=""
     private String name;
 
+    @Column
     private Integer age;
 
-    private char sex;
+    @Column
+    private Character sex;
 }

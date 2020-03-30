@@ -18,7 +18,7 @@ public class MvcConfig implements WebMvcConfigurer {
     //2.添加拦截规则到MVC连接器链
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(myInterceptor()).addPathPatterns("/**").excludePathPatterns("/hi");
+        //registry.addInterceptor(myInterceptor()).addPathPatterns("/**").excludePathPatterns("/hi");
     }
 
 }

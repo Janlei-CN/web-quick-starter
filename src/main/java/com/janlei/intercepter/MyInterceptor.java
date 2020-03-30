@@ -13,7 +13,7 @@ public class MyInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         log.debug("MyIntercepter    ->     preHandle");
-
+        //request.getRequestDispatcher("/hi").forward(request,response);
         return true;
     }
 

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
  * @author Administrator
  *
  */
-@ControllerAdvice
+//@ControllerAdvice
 public class GlobaExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String,String>> globaException(HttpServletRequest request,Exception exception){
