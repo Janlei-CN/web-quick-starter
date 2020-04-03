@@ -8,6 +8,11 @@ public class JLFilter implements Filter {
 
 
     @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+        
+    }
+
+    @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         try {
             filterChain.doFilter(servletRequest,servletResponse);
@@ -18,6 +23,11 @@ public class JLFilter implements Filter {
             }
 
         }
+
+    }
+
+    @Override
+    public void destroy() {
 
     }
 }

@@ -1,16 +1,19 @@
 package com.janlei.mapper;
 
-import com.janlei.model.entity.User;
-import org.springframework.stereotype.Repository;
-import tk.mybatis.mapper.common.Mapper;
+import com.janlei.model.User;
+import org.apache.ibatis.annotations.Mapper;
 
-@Repository
-public interface UserMapper extends Mapper<User> {
+@Mapper
+public interface UserMapper {
+    int deleteByPrimaryKey(Integer userId);
 
-    /**
-     * getUser
-     * @param id
-     * @return user
-     */
-    User getUser(Integer id);
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    User selectByPrimaryKey(Integer userId);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }
