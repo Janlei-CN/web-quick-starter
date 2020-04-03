@@ -1,10 +1,10 @@
-package com.janlei.springmybatis;
+package com.janlei;
 
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringMybatisApplicationTests {
+public class WebQuickStarterTest {
 
     @Test
     void contextLoads() {
