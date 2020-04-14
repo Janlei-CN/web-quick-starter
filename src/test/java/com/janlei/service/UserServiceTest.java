@@ -37,6 +37,6 @@ public class UserServiceTest {
         user.setPhone("11234567890");
         Integer userId = 23465433;
         User user2 = userMapper.selectByPrimaryKey(userId);
-        assertEquals(user,userMapper.selectByPrimaryKey(userId));
+        assertEquals(user,user2);
     }
 }

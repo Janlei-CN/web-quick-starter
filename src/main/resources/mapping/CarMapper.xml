@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.janlei.mapper.CarMapper" >
+  <resultMap id="CarMap" type="com.janlei.model.Car" >
+    <id column="brand" property="brand" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="VARCHAR" />
+    <result column="cid" property="cid" jdbcType="INTEGER"/>
+    <association property="country" javaType="com.janlei.model.Country">
+      <id column="id" property="id"/>
+      <result column="name" property="name"/>
+      <result column="referred" property="referred"/>
+    </association>
+  </resultMap>
+
+  <select id="getCarByBrand" parameterType="string" resultMap="CarMap" >
+    select t.brand,t.price,c.id,c.name,c.referred
+    from t_car t inner join t_country c on t.cid=c.id
+    where brand = #{brand,jdbcType=VARCHAR}
+  </select>
+</mapper>
