@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
     name: spring
-    url: jdbc:mysql://47.105.193.129:3306/spring
+    url: jdbc:mysql://47.105.193.129:3306/spring?useUnicode=true&characterEncoding=utf8
     username: root
     password: 123456
     # ʹ��druid����Դ

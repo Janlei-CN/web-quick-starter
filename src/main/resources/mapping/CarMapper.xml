@@ -4,8 +4,7 @@
   <resultMap id="CarMap" type="com.janlei.model.Car" >
     <id column="brand" property="brand" jdbcType="VARCHAR" />
     <result column="price" property="price" jdbcType="VARCHAR" />
-    <result column="cid" property="cid" jdbcType="INTEGER"/>
-    <association property="country" javaType="com.janlei.model.Country">
+    <association column="c" property="country" javaType="com.janlei.model.Country">
       <id column="id" property="id"/>
       <result column="name" property="name"/>
       <result column="referred" property="referred"/>
@@ -15,6 +14,6 @@
   <select id="getCarByBrand" parameterType="string" resultMap="CarMap" >
     select t.brand,t.price,c.id,c.name,c.referred
     from t_car t inner join t_country c on t.cid=c.id
-    where brand = #{brand,jdbcType=VARCHAR}
+    where t.brand=#{brand}
   </select>
 </mapper>

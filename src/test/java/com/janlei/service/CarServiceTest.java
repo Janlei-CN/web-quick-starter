@@ -38,7 +38,7 @@ public class CarServiceTest {
         car1.setCountry(country);
 
         Car car = carMapper.getCarByBrand(brand);
-        System.out.println(car);
+        System.out.println(car.toString());
 
         assertEquals(car1,car);
     }

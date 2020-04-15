@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class Car {
 
-    private static int i=0;
     private String brand;
 
     private String price;
@@ -19,7 +18,6 @@ public class Car {
     }
 
     public void setBrand(String brand) {
-        System.out.println(i++);
         this.brand = brand;
     }
 
@@ -39,8 +37,7 @@ public class Car {
         this.country = country;
     }
 
-
-    //***********hash and euqals************
+//***********hash and euqals************
 
     @Override
     public boolean equals(Object o) {
@@ -60,5 +57,14 @@ public class Car {
         result = 31 * result + (price != null ? price.hashCode() : 0);
         result = 31 * result + (country != null ? country.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", price='" + price + '\'' +
+                ", country=" + country +
+                '}';
     }
 }

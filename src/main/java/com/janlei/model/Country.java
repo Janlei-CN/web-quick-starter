@@ -57,4 +57,13 @@ public class Country {
         result = 31 * result + (referred != null ? referred.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", referred='" + referred + '\'' +
+                '}';
+    }
 }
