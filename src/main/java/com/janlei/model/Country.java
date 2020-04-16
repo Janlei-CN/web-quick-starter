@@ -2,6 +2,7 @@ package com.janlei.model;
 
 import java.util.Objects;
 
+
 public class Country {
 
     private Integer id;
@@ -65,5 +66,15 @@ public class Country {
                 ", name='" + name + '\'' +
                 ", referred='" + referred + '\'' +
                 '}';
+    }
+    //********NoArgsConstructor and AllArgsConstructor*******
+
+    public Country() {
+    }
+
+    public Country(Integer id, String name, String referred) {
+        this.id = id;
+        this.name = name;
+        this.referred = referred;
     }
 }
