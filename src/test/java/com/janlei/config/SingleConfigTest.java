@@ -15,7 +15,7 @@ public class SingleConfigTest {
         Country country = (Country)context.getBean("country");
         Country c2 = (Country)context.getBean("country");
         //isSingle
-        assertEquals(country,c2);
+        assertEquals(true,country == c2);
     }
 
 }
