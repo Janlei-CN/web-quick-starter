@@ -15,6 +15,12 @@ public class ManConfigTest {
         Country country = context.getBean(Country.class);
         //Country{id=1, name='美国', referred='US'}
         System.out.println(country);
+        String[] names = context.getBeanDefinitionNames();
+        //name  =  Constructor name
+        for (String name:
+             names) {
+            System.out.println(name);
+        }
     }
 
 }
