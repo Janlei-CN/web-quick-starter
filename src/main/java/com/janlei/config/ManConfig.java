@@ -1,13 +1,10 @@
 package com.janlei.config;
 
 import com.janlei.model.Country;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
-
-import javax.naming.ldap.Control;
 
 @Configuration      //声明配置类
 @ComponentScan(value = "com.janlei",
