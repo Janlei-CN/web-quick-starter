@@ -1,8 +1,14 @@
 package com.janlei.spring;
 
+import com.janlei.condition.LinuxCondition;
 import com.janlei.config.ManConfig;
+import com.janlei.model.Person;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.ConfigurableEnvironment;
+
+import java.util.Map;
 
 public class IocTest {
     @SuppressWarnings("resource")
@@ -16,5 +22,17 @@ public class IocTest {
              names) {
             System.out.println(name);
         }
+    }
+
+    @Test
+    public void getEvm(){
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ManConfig.class);
+        String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
+        for (String name:
+                beanNamesForType) {
+            System.out.println(name);
+        }
+        Map<String, Person> personMap = applicationContext.getBeansOfType(Person.class);
+        System.out.println(personMap);
     }
 }

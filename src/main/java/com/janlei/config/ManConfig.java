@@ -1,26 +1,26 @@
 package com.janlei.config;
 
+import com.janlei.condition.LinuxCondition;
+import com.janlei.condition.WindowsCondition;
 import com.janlei.model.Country;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import com.janlei.model.Person;
+import org.springframework.context.annotation.*;
 
 @Configuration      //声明配置类
-@ComponentScan(value = "com.janlei",
-//        excludeFilters = {
-//        @ComponentScan.Filter(type= FilterType.ANNOTATION,classes = {Bean.class})
-//}
-        includeFilters = {
-//                @ComponentScan.Filter(type = FilterType.ANNOTATION,classes = {Bean.class}),
-                @ComponentScan.Filter(type = FilterType.CUSTOM,classes = {MyTypeFilter.class})
-        },useDefaultFilters = false
-
-)        //指定扫描的包
+@ComponentScan(value = "com.janlei")//指定扫描的包
 public class ManConfig {
 
-    @Bean //给容器注入一个bean;id默认是方法名
-    public Country Country(){
-        return new Country(1,"美国","US");
+    @Conditional({WindowsCondition.class})
+    @Bean("bill") //给容器注入一个bean;id默认是方法名
+    public Person person01(){
+        return new Person("bill",60);
+
+    }
+
+    @Conditional({LinuxCondition.class})
+    @Bean("linus") //给容器注入一个bean;id默认是方法名
+    public Person person02(){
+        return new Person("linus",48);
+
     }
 }
