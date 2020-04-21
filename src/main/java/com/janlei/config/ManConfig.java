@@ -2,12 +2,14 @@ package com.janlei.config;
 
 import com.janlei.condition.LinuxCondition;
 import com.janlei.condition.WindowsCondition;
+import com.janlei.model.Color;
 import com.janlei.model.Country;
 import com.janlei.model.Person;
 import org.springframework.context.annotation.*;
 
 @Configuration      //声明配置类
 @ComponentScan(value = "com.janlei")//指定扫描的包
+@Import(Color.class)
 public class ManConfig {
 
     @Conditional({WindowsCondition.class})

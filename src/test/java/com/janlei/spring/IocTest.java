@@ -23,16 +23,4 @@ public class IocTest {
             System.out.println(name);
         }
     }
-
-    @Test
-    public void getEvm(){
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(ManConfig.class);
-        String[] beanNamesForType = applicationContext.getBeanNamesForType(Person.class);
-        for (String name:
-                beanNamesForType) {
-            System.out.println(name);
-        }
-        Map<String, Person> personMap = applicationContext.getBeansOfType(Person.class);
-        System.out.println(personMap);
-    }
 }
