@@ -1,4 +1,4 @@
-package com.janlei.Util;
+package com.janlei.util;
 
 import com.janlei.model.ExcelDataVO;
 import org.apache.poi.ss.usermodel.*;

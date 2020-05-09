@@ -43,7 +43,7 @@ spring:
 
 ## �����ýڵ�Ϊ�����Ľڵ㣬�кܶ�ͬѧ���׽�������÷���spring�Ľڵ��£����������޷���ʶ��
 mybatis:
-  mapper-locations: classpath:mapping/*.xml  #ע�⣺һ��Ҫ��Ӧmapperӳ��xml�ļ�������·��
+  mapper-locations: classpath:mapping/*Mapper.xml  #ע�⣺һ��Ҫ��Ӧmapperӳ��xml�ļ�������·��
   type-aliases-package: com.janlei.model  # ע�⣺��Ӧʵ�����·��
 
 #pagehelper��ҳ���

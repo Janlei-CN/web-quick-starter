@@ -1,4 +1,4 @@
-package com.janlei.Util;
+package com.janlei.util;
 
 import org.jasypt.util.text.BasicTextEncryptor;
 import org.junit.Test;
