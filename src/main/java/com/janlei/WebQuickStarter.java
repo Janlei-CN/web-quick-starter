@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * SpringBoot 启动引导类
  */
 @SpringBootApplication
-@MapperScan("com.janlei.mapper")
+@MapperScan("com.janlei.dao")
 public class WebQuickStarter {
     public static void main(String[] args) {
 
